@@ -27,23 +27,23 @@ describe("Reducer", () => {
 });
 
 describe("hasWinner", () => {
-    it("should return true if an early winner is determined", () => {
+    it("should return true if a early winner is determined", () => { // ici
         const score: Score = { teamA: 3, teamB: 0 };
         expect(hasWinner(score, 4)).toBe(true);
     });
 
-    it("should return false if no winner can be determined yet", () => {
+    it("should return false if no winner can be determined", () => {
         const score: Score = { teamA: 1, teamB: 1 };
         expect(hasWinner(score, 2)).toBe(false);
     });
 
-    it("should return true after 5 shots if scores differ", () => {
+    it("should return true after 5 shot if score differ", () => {
         const score: Score = { teamA: 4, teamB: 3 };
         expect(hasWinner(score, 10)).toBe(true);
     });
 });
 
-describe("determineWinner", () => {
+describe("determiner Winner", () => {
     it("should return 'Équipe A' if team A has more goals", () => {
         const score: Score = { teamA: 3, teamB: 2 };
         expect(determineWinner(score)).toBe("Équipe A");
@@ -54,7 +54,7 @@ describe("determineWinner", () => {
         expect(determineWinner(score)).toBe("Équipe B");
     });
 
-    it("should return null if scores are equal", () => {
+    it("should return null if scores is equal", () => {
         const score: Score = { teamA: 3, teamB: 3 };
         expect(determineWinner(score)).toBeNull();
     });
